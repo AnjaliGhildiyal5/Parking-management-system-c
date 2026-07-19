@@ -6,30 +6,36 @@ The Car Parking Management System is a console-based application developed in C 
 
 The system helps parking operators efficiently manage available parking spaces, track parked vehicles, generate parking receipts, and maintain historical records using file handling.
 
- Objectives
-Automate parking slot allocation
-Maintain vehicle entry and exit records
-Calculate parking charges based on parking duration
-Track available and occupied parking slots
-Generate parking receipts
-Store data permanently using file handling
-Provide parking reports and revenue details
- Features
- Vehicle Management
-Add new vehicle records
-Store vehicle number and owner details
-Assign parking slots automatically
-Track vehicle entry and exit time
-Search currently parked vehicles
- Parking Slot Management
-Automatic slot allocation
-Circular queue-based free slot management
-Real-time available slot tracking
-Slot reuse after vehicle exit
-Synchronization of slots after program restart
- Billing System
-Calculates parking duration
-Generates automatic parking charges
+ # Objectives
+- Automate parking slot allocation
+- Maintain vehicle entry and exit records
+- Calculate parking charges based on parking duration
+- Track available and occupied parking slots
+- Generate parking receipts
+- Store data permanently using file handling
+- Provide parking reports and revenue details
+
+ # Features
+# Vehicle Management
+- Add new vehicle records
+- Store vehicle number and owner details
+- Assign parking slots automatically
+- Track vehicle entry and exit time
+- Search currently parked vehicles
+
+ --- 
+ # Parking Slot Management
+- Automatic slot allocation
+- Circular queue-based free slot management
+- Real-time available slot tracking
+- Slot reuse after vehicle exit
+- Synchronization of slots after program restart
+
+---
+
+ # Billing System
+- Calculates parking duration
+- Generates automatic parking charges
 ### Parking Rates
 
 | Vehicle Type | Charge Per Hour |
@@ -44,10 +50,10 @@ Generates automatic parking charges
 
 The system provides:
 
-Current parked vehicle list
-Parking status report
-Revenue report
-Available slot display
+- Current parked vehicle list
+- Parking status report
+- Revenue report
+- Available slot display
 ---
 
 # Technologies Used
@@ -168,10 +174,11 @@ Efficient slot allocation
 
 Responsible for:
 
-Saving records
-Loading previous data
-Maintaining persistence
- Sample Operations
+- Saving records
+- Loading previous data
+- Maintaining persistence
+
+Sample Operations
 Park Vehicle
 
 Input:
@@ -189,7 +196,7 @@ Vehicle Exit
 
 Output:
 
-Parking Receipt
+# Parking Receipt
 
 Receipt Number : R00001
 Vehicle Number : UP16XY2003
@@ -233,31 +240,31 @@ Linux:
 ---
 
 # Challenges Faced
-Implementing circular queue correctly
-Maintaining slot consistency after restart
-Handling file storage and retrieval
-Managing vehicle history
-Calculating parking duration accurately
+- Implementing circular queue correctly
+- Maintaining slot consistency after restart
+- Handling file storage and retrieval
+- Managing vehicle history
+- Calculating parking duration accurately
 
 # Future Enhancements
--Graphical User Interface (GUI)
--Database integration
--Online parking reservation
--QR-based parking tickets
--Multi-floor parking support
--User authentication
--Mobile application
+- Graphical User Interface (GUI)
+- Database integration
+- Online parking reservation
+- QR-based parking tickets
+- Multi-floor parking support
+- User authentication
+- Mobile application
 
 ---
 
  # Learning Outcomes
 Through this project, we learned:
 
--Modular programming in C
--Data structure implementation
--File handling techniques
--Problem-solving using programming logic
--Designing a real-world management system
+- Modular programming in C
+- Data structure implementation
+- File handling techniques
+- Problem-solving using programming logic
+- Designing a real-world management system
 
 ---
 
