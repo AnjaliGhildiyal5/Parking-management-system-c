@@ -23,4 +23,28 @@ void initializeParking()
 
     loadRecords();
 }
+int generateParkingID()
+{
+    return nextParkingID++;
+}
+int generateReceiptNo()
+{
+    return nextReceipt++;
+}
+
+int searchVehicle(char vehicleNumber[])
+{
+    int i;
+
+    for(i=0;i<vehicleCount;i++)
+    {
+        if(strcmp(vehicles[i].vehicleNumber,vehicleNumber)==0
+           && vehicles[i].isParked==1)
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
 
