@@ -24,8 +24,41 @@ Queue freeSlots;
 void initializeParking()
 {
     initializeQueue(&freeSlots);
-
     loadRecords();
+    rebuildFreeSlotQueue();
+}
+void rebuildFreeSlotQueue()
+{
+    int slot, i;
+    int occupied;
+
+    // Start with an empty queue
+    freeSlots.front = 0;
+    freeSlots.rear = -1;
+    freeSlots.count = 0;
+
+    // Check every parking slot
+    for(slot = 1; slot <= MAX_SLOTS; slot++)
+    {
+        occupied = 0;
+
+        // Check if this slot is occupied
+        for(i = 0; i < vehicleCount; i++)
+        {
+            if(vehicles[i].isParked &&
+               vehicles[i].slotNumber == slot)
+            {
+                occupied = 1;
+                break;
+            }
+        }
+
+        // If free, add it to the queue
+        if(!occupied)
+        {
+            enqueue(&freeSlots, slot);
+        }
+    }
 }
 
 //step 4
