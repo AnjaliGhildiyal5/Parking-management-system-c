@@ -50,6 +50,8 @@ void displayCurrentTime(time_t t);
 char* getVehicleType(int type);
 void displayRevenueReport();
 int generateReceiptNo();
+void displayVehicleDetails(int index);
+void rebuildFreeSlotQueue();
 
 //Since vehicles, vehicleCount, totalRevenue, etc. are inside parking.c, file.c cannot access them.
 //We solve this using extern.
