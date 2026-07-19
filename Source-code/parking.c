@@ -112,6 +112,12 @@ void displayCurrentTime(time_t t)
     timeInfo = localtime(&t);
 
     printf("%02d-%02d-%04d %02d:%02d:%02d",
+        timeInfo->tm_mday,
+        timeInfo->tm_mon + 1,
+        timeInfo->tm_year + 1900,
+        timeInfo->tm_hour,
+        timeInfo->tm_min,
+        timeInfo->tm_sec);
             
 }
 
