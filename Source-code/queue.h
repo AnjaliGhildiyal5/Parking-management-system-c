@@ -19,4 +19,6 @@ int isFull(Queue *q);
 void enqueue(Queue *q, int slotNo);
 int dequeue(Queue *q);
 
+void displayAvailableSlots(Queue *q);
+
 #endif
