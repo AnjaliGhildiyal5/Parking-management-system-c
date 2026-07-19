@@ -64,37 +64,40 @@ Available slot display
 ---
 
  # Project Structure
-```Car-Parking-Management-System
+## System Workflow
 
-│
-├── main.c
-│ Program execution and menu handling
-│
-├── parking.c
-│ Vehicle operations and parking logic
-│
-├── parking.h
-│ Vehicle structures and function declarations
-│
-├── queue.c
-│ Circular queue implementation
-│
-├── queue.h
-│ Queue structure and declarations
-│
-├── file.c
-│ Data saving and loading operations
-│
-├── file.h
-│ File handling declarations
-│
-├── parking.dat
-│ Stored parking records
-│
-└── README.md```
+```mermaid
+flowchart TD
 
+A[START] --> B[Load Previous Records]
+
+B --> C[Initialize Parking Slots]
+
+C --> D[Display Main Menu]
+
+D --> E{Choose Operation}
+
+E --> F[Park Vehicle]
+F --> G[Allocate Slot]
+G --> H[Save Record]
+
+E --> I[Exit Vehicle]
+I --> J[Calculate Charges]
+J --> K[Release Slot]
+
+E --> L[Search Vehicle]
+
+E --> M[Display Reports]
+
+H --> N[Save Data]
+K --> N
+L --> N
+M --> N
+
+N --> O[EXIT]
+```
 # System Workflow
-```START
+START
   |
   ↓
 Load Previous Records
@@ -132,7 +135,7 @@ Choose Operation
 Save Data
   |
   ↓
-EXIT```
+EXIT
 
 ## Modules
 # 1. Main Module
