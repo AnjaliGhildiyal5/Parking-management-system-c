@@ -10,6 +10,8 @@ int main()
 
 
     initializeParking();
+    loadRecords();
+    rebuildFreeSlotQueue();
 
 
     while(1)
@@ -114,10 +116,7 @@ int main()
 
                 printf("\nInvalid Choice.\n");
         }
-
     }
-
-
     return 0;
 }
 
