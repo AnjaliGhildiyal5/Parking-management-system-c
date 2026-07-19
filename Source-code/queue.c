@@ -50,6 +50,23 @@ int dequeue(Queue *q)
     return slot;
 }
 
-    
+void displayAvailableSlots(Queue *q)
+{
+    if(isEmpty(q))
+    {
+        printf("\nNo Slots Available\n");
+        return;
+    }
 
+    printf("\nAvailable Slots:\n");
 
+    int index=q->front;
+
+    for(int i=0;i<q->count;i++)
+    {
+        printf("%d ",q->slots[index]);
+        index=(index+1)%MAX_SLOTS;
+    }
+
+    printf("\n");
+}
