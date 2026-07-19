@@ -4,8 +4,8 @@
 
 #include "parking.h"
 #include "queue.h"
-
-//global variables(step 2)
+#include "file.h"
+//global variables (step2)
 Vehicle vehicles[MAX_VEHICLES];
 
 int vehicleCount = 0;
