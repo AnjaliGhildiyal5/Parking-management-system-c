@@ -229,6 +229,9 @@ parking.exe
 Linux:
 
 ./parking
+
+---
+
 # Challenges Faced
 Implementing circular queue correctly
 Maintaining slot consistency after restart
@@ -237,22 +240,27 @@ Managing vehicle history
 Calculating parking duration accurately
 
 # Future Enhancements
-Graphical User Interface (GUI)
-Database integration
-Online parking reservation
-QR-based parking tickets
-Multi-floor parking support
-User authentication
-Mobile application
- Learning Outcomes
+-Graphical User Interface (GUI)
+-Database integration
+-Online parking reservation
+-QR-based parking tickets
+-Multi-floor parking support
+-User authentication
+-Mobile application
 
-# Through this project, we learned:
+---
 
-Modular programming in C
-Data structure implementation
-File handling techniques
-Problem-solving using programming logic
-Designing a real-world management system
+ # Learning Outcomes
+Through this project, we learned:
+
+-Modular programming in C
+-Data structure implementation
+-File handling techniques
+-Problem-solving using programming logic
+-Designing a real-world management system
+
+---
+
 # Conclusion
 
 The Car Parking Management System successfully provides an automated solution for managing parking operations. It reduces manual effort, improves accuracy, and demonstrates the practical application of C programming concepts in solving real-world problems.
