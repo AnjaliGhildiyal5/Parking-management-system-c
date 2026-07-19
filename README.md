@@ -64,7 +64,7 @@ Available slot display
 ---
 
  # Project Structure
-Car-Parking-Management-System
+```Car-Parking-Management-System
 
 │
 ├── main.c
@@ -91,9 +91,10 @@ Car-Parking-Management-System
 ├── parking.dat
 │ Stored parking records
 │
-└── README.md
+└── README.md```
+
 # System Workflow
-START
+```START
   |
   ↓
 Load Previous Records
@@ -131,7 +132,7 @@ Choose Operation
 Save Data
   |
   ↓
-EXIT
+EXIT```
 
 ## Modules
 # 1. Main Module
