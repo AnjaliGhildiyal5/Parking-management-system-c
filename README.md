@@ -30,13 +30,17 @@ Synchronization of slots after program restart
  Billing System
 Calculates parking duration
 Generates automatic parking charges
-Parking Rates:
-Vehicle Type	Charge Per Hour
-Bike	Rs 20
-Car	Rs 50
-Bus	Rs 80
-Truck	Rs 100
- Reports
+### Parking Rates
+
+| Vehicle Type | Charge Per Hour |
+|--------------|----------------|
+| Bike | Rs 20 |
+| Car | Rs 50 |
+| Bus | Rs 80 |
+| Truck | Rs 100 |
+
+---
+## Reports
 
 The system provides:
 
@@ -44,44 +48,51 @@ Current parked vehicle list
 Parking status report
 Revenue report
 Available slot display
- Technologies Used
-Technology	Purpose
-C Programming	Core development
-Structures	Vehicle data management
-Circular Queue	Parking slot allocation
-File Handling	Permanent data storage
-Time Library	Entry/exit time calculation
-Linear Search	Vehicle searching
- Project Structure
+---
+
+# Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| C Programming | Core development |
+| Structures | Vehicle data management |
+| Circular Queue | Parking slot allocation |
+| File Handling | Permanent data storage |
+| Time Library | Entry and exit time calculation |
+| Linear Search | Vehicle searching |
+
+---
+
+ # Project Structure
 Car-Parking-Management-System
 
 │
 ├── main.c
-│       Program execution and menu handling
+│ Program execution and menu handling
 │
 ├── parking.c
-│       Vehicle operations and parking logic
+│ Vehicle operations and parking logic
 │
 ├── parking.h
-│       Vehicle structures and function declarations
+│ Vehicle structures and function declarations
 │
 ├── queue.c
-│       Circular queue implementation
+│ Circular queue implementation
 │
 ├── queue.h
-│       Queue structure and declarations
+│ Queue structure and declarations
 │
 ├── file.c
-│       Data saving and loading operations
+│ Data saving and loading operations
 │
 ├── file.h
-│       File handling declarations
+│ File handling declarations
 │
 ├── parking.dat
-│       Stored parking records
+│ Stored parking records
 │
 └── README.md
- System Workflow
+# System Workflow
 START
   |
   ↓
@@ -122,15 +133,15 @@ Save Data
   ↓
 EXIT
 
-Modules
-1. Main Module
+## Modules
+# 1. Main Module
 
 Responsible for:
 
 User interaction
 Menu display
 Calling required functions
-2. Parking Module
+# 2. Parking Module
 
 Handles:
 
@@ -139,7 +150,7 @@ Vehicle exit
 Searching
 Charge calculation
 Parking reports
-3. Queue Module
+# 3. Queue Module
 
 Implements:
 
@@ -149,7 +160,7 @@ Used for:
 
 Managing free parking slots
 Efficient slot allocation
-4. File Handling Module
+# 4. File Handling Module
 
 Responsible for:
 
@@ -180,25 +191,27 @@ Receipt Number : R00001
 Vehicle Number : UP16XY2003
 Parking Duration : 2 Hours
 Parking Charge : Rs 40
- Output Screenshots
+# Output Screenshots
 
 Screenshots included in this repository demonstrate:
 
-Main dashboard
+# Main dashboard
 Vehicle parking ticket
 Current parked vehicles
 Parking status
 Exit receipt
 Revenue report
  How to Run
-Requirements
+ 
+# Requirements
 C Compiler
 GCC recommended
 IDE/Text Editor:
 VS Code
 CodeBlocks
 Dev-C++
-Compilation
+
+# Compilation
 
 Using GCC:
 
@@ -212,14 +225,14 @@ parking.exe
 Linux:
 
 ./parking
- Challenges Faced
+# Challenges Faced
 Implementing circular queue correctly
 Maintaining slot consistency after restart
 Handling file storage and retrieval
 Managing vehicle history
 Calculating parking duration accurately
 
-Future Enhancements
+# Future Enhancements
 Graphical User Interface (GUI)
 Database integration
 Online parking reservation
@@ -229,13 +242,13 @@ User authentication
 Mobile application
  Learning Outcomes
 
-Through this project, we learned:
+# Through this project, we learned:
 
 Modular programming in C
 Data structure implementation
 File handling techniques
 Problem-solving using programming logic
 Designing a real-world management system
-✅ Conclusion
+# Conclusion
 
 The Car Parking Management System successfully provides an automated solution for managing parking operations. It reduces manual effort, improves accuracy, and demonstrates the practical application of C programming concepts in solving real-world problems.
