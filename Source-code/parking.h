@@ -65,5 +65,20 @@ void displayRevenueReport();
 
 int generateReceiptNo();
 
+extern Vehicle vehicles[MAX_VEHICLES];
+
+extern int vehicleCount;
+
+extern double totalRevenue;
+
+extern int totalVehiclesServed;
+
+extern int nextParkingID;
+
+extern Queue freeSlots;
+
+
+#endif
+
 
 #endif
