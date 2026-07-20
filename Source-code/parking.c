@@ -391,6 +391,19 @@ void exitVehicle()
         printf("\nVehicle Not Found.\n");
         return;
     }
+    
+    int enteredParkingID;
+    printf("Enter Parking ID printed on the ticket : ");
+    scanf("%d", &enteredParkingID);
+    if(enteredParkingID != vehicles[index].parkingID)
+    {
+        printf("\n======================================");
+        printf("\n AUTHENTICATION FAILED");
+        printf("\n Incorrect Parking ID.");
+        printf("\n Vehicle cannot be released.");
+        printf("\n======================================\n");
+        return;
+    }   
 
     vehicles[index].exitTime = time(NULL);
 
