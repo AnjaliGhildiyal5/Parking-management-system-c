@@ -43,6 +43,7 @@ void exitVehicle();
 int searchVehicle(char vehicleNumber[]);
 void displayParkedVehicles();
 void displayParkingStatus();
+void displayDashboard();
 double calculateCharge(time_t entry,time_t exit,VehicleType type);
 int generateParkingID();
 void initializeParking();
