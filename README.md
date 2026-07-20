@@ -104,31 +104,6 @@ N --> O[EXIT]
 
 ```
 
-#System Workflow
-```mermaid
-flowchart TD
-    A([START]) --> B[Load Previous Records]
-    B --> C[Initialize Parking Slots]
-    C --> D[Display Main Menu]
-    D --> E[Choose Operation]
-
-    E -->|Park Vehicle| F[Allocate Slot]
-    F --> G[Save Record]
-    G --> N[Save Data]
-
-    E -->|Exit Vehicle| H[Calculate Charges]
-    H --> I[Release Slot]
-    I --> N
-
-    E -->|Search Vehicle| J[Search Vehicle]
-    J --> N
-
-    E -->|Display Reports| K[Display Reports]
-    K --> N
-
-    N --> L([EXIT])
-```
-```
 ## Modules
 # 1. Main Module
 
@@ -140,22 +115,21 @@ Calling required functions
 # 2. Parking Module
 
 Handles:
-
-Vehicle entry
-Vehicle exit
-Searching
-Charge calculation
-Parking reports
+ Vehicle entry
+ Vehicle exit
+ Searching
+ Charge calculation
+ Parking reports
+ 
 # 3. Queue Module
 
 Implements:
-
-Circular Queue
+ Circular Queue
 
 Used for:
-
-Managing free parking slots
-Efficient slot allocation
+ Managing free parking slots
+ Efficient slot allocation
+ 
 # 4. File Handling Module
 
 Responsible for:
