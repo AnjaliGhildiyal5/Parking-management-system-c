@@ -5,7 +5,11 @@
 #include "parking.h"
 #include "queue.h"
 #include "file.h"
-//global variables (step2)
+
+#include <ctype.h>
+
+
+//global variables (step2 )
 Vehicle vehicles[MAX_VEHICLES];
 
 int vehicleCount = 0;
@@ -24,9 +28,15 @@ Queue freeSlots;
 void initializeParking()
 {
     initializeQueue(&freeSlots);
+
     loadRecords();
+   // printf("\nVehicle Count Loaded = %d\n", vehicleCount);
     rebuildFreeSlotQueue();
+   // printf("\nDEBUG Available Slots After Rebuild = %d\n",
+          // freeSlots.count);
+    
 }
+
 void rebuildFreeSlotQueue()
 {
     int slot, i;
@@ -61,7 +71,7 @@ void rebuildFreeSlotQueue()
     }
 }
 
-//step 4
+//step4
 int generateParkingID()
 {
     return nextParkingID++;
@@ -70,7 +80,6 @@ int generateReceiptNo()
 {
     return nextReceipt++;
 }
-
 
 //step5
 int searchVehicle(char vehicleNumber[])
@@ -145,15 +154,13 @@ void displayCurrentTime(time_t t)
     timeInfo = localtime(&t);
 
     printf("%02d-%02d-%04d %02d:%02d:%02d",
-        timeInfo->tm_mday,
-        timeInfo->tm_mon + 1,
-        timeInfo->tm_year + 1900,
-        timeInfo->tm_hour,
-        timeInfo->tm_min,
-        timeInfo->tm_sec);
-            
+            timeInfo->tm_mday,
+            timeInfo->tm_mon + 1,
+            timeInfo->tm_year + 1900,
+            timeInfo->tm_hour,
+            timeInfo->tm_min,
+            timeInfo->tm_sec);
 }
-
 
 //step7 vehicle type 
 char* getVehicleType(int type)
@@ -199,24 +206,78 @@ void parkVehicle()
     printf("Car    : Rs 50\n");
     printf("Bus    : Rs 80\n");
     printf("Truck  : Rs 100\n\n");
-
-    printf("Enter Vehicle Number (or type EXIT to cancel): ");
-    scanf("%s", newVehicle.vehicleNumber);
-    if(strcmp(newVehicle.vehicleNumber, "EXIT") == 0)
+    
+    do
     {
-        printf("\nParking Cancelled.\n");
-        return;
-    }
+        printf("Enter Vehicle Number: ");
+        scanf("%19s", newVehicle.vehicleNumber);
+        // Convert to uppercase
+        for(int i = 0; newVehicle.vehicleNumber[i] != '\0'; i++)
+        {newVehicle.vehicleNumber[i] =
+             toupper(newVehicle.vehicleNumber[i]);
+             }
+             if(strlen(newVehicle.vehicleNumber) != 10)
+             {
+                printf("\nInvalid Vehicle Number! Must be exactly 10 characters.\n");
+                continue;
+            }
+            if(!(isalpha(newVehicle.vehicleNumber[0]) &&
+            isalpha(newVehicle.vehicleNumber[1]) &&
+            
+            isdigit(newVehicle.vehicleNumber[2]) &&
+            isdigit(newVehicle.vehicleNumber[3]) &&
+            
+            isalpha(newVehicle.vehicleNumber[4]) &&
+            isalpha(newVehicle.vehicleNumber[5]) &&
+            
+            
+            isdigit(newVehicle.vehicleNumber[6]) &&
+            isdigit(newVehicle.vehicleNumber[7]) &&
+            
+            isdigit(newVehicle.vehicleNumber[8]) &&
+            isdigit(newVehicle.vehicleNumber[9])))
+            {
+                 printf("\nInvalid Vehicle Number Format!\n");
+                 printf("Example: MP21XY2000\n");
+                 continue;
+                 }
+                 
+                 
+                 break;
+                
+                }while(1);
 
-    // Vehicle Number Validation
-    if (strlen(newVehicle.vehicleNumber) < 5)
+
+
+    // VALID USER NAME FIX
+    while(getchar() != '\n');   // Clear input buffer
+    int i, valid;
+    do
     {
-        printf("\nInvalid Vehicle Number.\n");
-        return;
+        printf("Enter Owner Name : ");
+        fgets(newVehicle.ownerName, sizeof(newVehicle.ownerName), stdin);
         
-    }
-    printf("Enter Owner Name : ");
-    scanf(" %[^\n]", newVehicle.ownerName);
+        newVehicle.ownerName[strcspn(newVehicle.ownerName, "\n")] = '\0';
+        valid = 0;
+        
+        for(i = 0; newVehicle.ownerName[i] != '\0'; i++)
+        {
+            if(newVehicle.ownerName[i] != ' ')
+            {
+                valid = 1;
+                break;
+            }
+        }
+        
+        if(!valid)
+        {
+            printf("\nOwner name cannot be blank. Please enter again.\n");
+        }
+    } 
+    
+    while(!valid);
+    
+    
     printf("\nVehicle Type\n");
     printf("1. Bike\n");
     printf("2. Car\n");
