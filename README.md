@@ -101,47 +101,33 @@ L --> N
 M --> N
 
 N --> O[EXIT]
+
 ```
-# System Workflow
-```START
-  |
-  ↓
-Load Previous Records
-  |
-  ↓
-Initialize Parking Slots
-  |
-  ↓
-Display Main Menu
-  |
-  ↓
-Choose Operation
-  |
-  ├── Park Vehicle
-  |       |
-  |       ↓
-  |  Allocate Slot
-  |       |
-  |       ↓
-  |  Save Record
-  |
-  ├── Exit Vehicle
-  |       |
-  |       ↓
-  |  Calculate Charges
-  |       |
-  |       ↓
-  |  Release Slot
-  |
-  ├── Search Vehicle
-  |
-  ├── Display Reports
-  |
-  ↓
-Save Data
-  |
-  ↓
-EXIT
+
+#System Workflow
+```mermaid
+flowchart TD
+    A([START]) --> B[Load Previous Records]
+    B --> C[Initialize Parking Slots]
+    C --> D[Display Main Menu]
+    D --> E[Choose Operation]
+
+    E -->|Park Vehicle| F[Allocate Slot]
+    F --> G[Save Record]
+    G --> N[Save Data]
+
+    E -->|Exit Vehicle| H[Calculate Charges]
+    H --> I[Release Slot]
+    I --> N
+
+    E -->|Search Vehicle| J[Search Vehicle]
+    J --> N
+
+    E -->|Display Reports| K[Display Reports]
+    K --> N
+
+    N --> L([EXIT])
+```
 ```
 ## Modules
 # 1. Main Module
