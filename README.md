@@ -1,4 +1,7 @@
-# Parking-management-system-c
+
+# Parking Complex Management System (C)
+
+A console-based Parking Management System developed in C that integrates **Circular Queue**, **Weighted Graph**, **Dijkstra's Algorithm**, and **Binary File Handling** to provide efficient parking allocation, smart navigation, and persistent record management.
 
 Project Overview
 
@@ -6,16 +9,56 @@ The Car Parking Management System is a console-based application developed in C 
 
 The system helps parking operators efficiently manage available parking spaces, track parked vehicles, generate parking receipts, and maintain historical records using file handling.
 
- # Objectives
-- Automate parking slot allocation
-- Maintain vehicle entry and exit records
-- Calculate parking charges based on parking duration
+## Key Highlights
+
+- 🚗 Automatic parking slot allocation using a Circular Queue
+- 🅿️ Dual parking areas with automatic assignment based on expected parking duration
+- 🗺️ Graph-based parking complex navigation
+- 📍 Shortest route calculation using Dijkstra's Algorithm
+- 💾 Persistent storage using binary file handling
+- 🔐 Admin authentication for revenue reports
+- 🎫 Parking ID verification before vehicle exit
+- 📊 Real-time parking dashboard and status monitoring
+
+## Objectives
+
+- Automate parking slot allocation and management
+- Reduce manual intervention in parking operations
+- Provide efficient vehicle entry and exit handling
+- Calculate parking charges automatically
+- Maintain permanent parking records
+- Improve navigation inside the parking complex using graph algorithms
+- Demonstrate practical applications of Data Structures in C
 - Track available and occupied parking slots
 - Generate parking receipts
-- Store data permanently using file handling
 - Provide parking reports and revenue details
 
+ ## Parking Complex
+
+The parking facility consists of:
+
+- Entrance
+- Area 1 (Short-term Parking)
+- Area 2 (Long-term Parking)
+- Fuel Station
+- Car Wash
+- Garage
+- Snack Store
+- Accessories Shop
+
+The locations are connected using a weighted graph to simulate real-world navigation inside the parking complex.
+ 
  # Features
+
+ 
+ ### Parking Area Management
+
+- Two parking zones (Area 1 and Area 2)
+- Automatic area allocation based on expected parking duration
+- Balanced utilization of parking spaces
+  
+  ---
+  
 # Vehicle Management
 - Add new vehicle records
 - Store vehicle number and owner details
@@ -24,6 +67,16 @@ The system helps parking operators efficiently manage available parking spaces, 
 - Search currently parked vehicles
 
  --- 
+
+ ### Smart Navigation
+
+- Visual parking complex map
+- Weighted graph representation of the parking area
+- Shortest route calculation using Dijkstra's Algorithm
+- Navigation between parking areas and facilities
+  
+---
+
  # Parking Slot Management
 - Automatic slot allocation
 - Circular queue-based free slot management
@@ -36,6 +89,14 @@ The system helps parking operators efficiently manage available parking spaces, 
  # Billing System
 - Calculates parking duration
 - Generates automatic parking charges
+
+  ### Security
+
+- Parking ID verification before vehicle exit
+- Admin authentication for revenue reports
+
+  ---
+  
 ### Parking Rates
 
 | Vehicle Type | Charge Per Hour |
@@ -56,52 +117,90 @@ The system provides:
 - Available slot display
 ---
 
-# Technologies Used
-
 | Technology | Purpose |
 |------------|---------|
 | C Programming | Core development |
-| Structures | Vehicle data management |
+| Structures | Vehicle record management |
 | Circular Queue | Parking slot allocation |
-| File Handling | Permanent data storage |
-| Time Library | Entry and exit time calculation |
-| Linear Search | Vehicle searching |
+| Weighted Graph | Parking navigation |
+| Dijkstra's Algorithm | Shortest route calculation |
+| File Handling | Permanent storage |
+| Time Library | Entry/Exit time management |
+| Linear Search | Vehicle lookup |
 
 ---
 
- # Project Structure
+## Data Structures & Algorithms
+
+### Data Structures
+
+- Structure
+- Circular Queue
+- Weighted Graph
+- Arrays
+
+### Algorithms
+
+- Dijkstra's Shortest Path Algorithm
+- Linear Search
+- Binary File Read/Write
+
+---
+
+# Project Structure
 ## System Workflow
 
 ```mermaid
 flowchart TD
 
-A[START] --> B[Load Previous Records]
+A([START]) --> B[Initialize Parking System]
+B --> C[Load Previous Records]
+C --> D[Rebuild Free Slot Queue]
+D --> E[Display Dashboard]
+E --> F[Display Main Menu]
 
-B --> C[Initialize Parking Slots]
+F --> G{Select Operation}
 
-C --> D[Display Main Menu]
+%% Parking
+G -->|Park Vehicle| H[Enter Vehicle Details]
+H --> I{Expected Duration > 5 Hours?}
+I -->|No| J[Assign Area 1]
+I -->|Yes| K[Assign Area 2]
+J --> L[Allocate Free Slot]
+K --> L
+L --> M[Generate Parking Ticket]
+M --> F
 
-D --> E{Choose Operation}
+%% Exit
+G -->|Exit Vehicle| N[Search Vehicle]
+N --> O[Verify Parking ID]
+O -->|Valid| P[Calculate Parking Charges]
+P --> Q[Release Parking Slot]
+Q --> R[Update Revenue & Records]
+R --> F
+O -->|Invalid| F
 
-E --> F[Park Vehicle]
-F --> G[Allocate Slot]
-G --> H[Save Record]
+%% Search
+G -->|Search Vehicle| S[Display Vehicle Details]
+S --> F
 
-E --> I[Exit Vehicle]
-I --> J[Calculate Charges]
-J --> K[Release Slot]
+%% Reports
+G -->|Reports| T[Display Status / Revenue / Parked Vehicles]
+T --> F
 
-E --> L[Search Vehicle]
+%% Available Slots
+G -->|Available Slots| U[Display Free Slots]
+U --> F
 
-E --> M[Display Reports]
+%% Navigation
+G -->|Parking Navigation| V[View Map / Find Shortest Route]
+V --> W[Run Dijkstra Algorithm]
+W --> X[Display Shortest Route]
+X --> F
 
-H --> N[Save Data]
-K --> N
-L --> N
-M --> N
-
-N --> O[EXIT]
-
+%% Exit Program
+G -->|Exit| Y[Save Records]
+Y --> Z([END])
 ```
 
 ## Modules
@@ -166,13 +265,18 @@ Parking Charge : Rs 40
 
 Screenshots included in this repository demonstrate:
 
-# Main dashboard
-Vehicle parking ticket
-Current parked vehicles
-Parking status
-Exit receipt
-Revenue report
- How to Run
+## Output Screenshots
+
+- Main Dashboard
+- Parking Ticket
+- Vehicle Search
+- Current Parked Vehicles
+- Parking Status
+- Revenue Report
+- Parking Navigation Menu
+- Parking Complex Map
+- Shortest Route Navigation
+- Exit Receipt
  
 # Requirements
 C Compiler
@@ -205,6 +309,9 @@ Linux:
 - Handling file storage and retrieval
 - Managing vehicle history
 - Calculating parking duration accurately
+- Implementing Dijkstra's Algorithm in C
+- Designing a weighted graph for parking navigation
+- Integrating graph navigation without affecting the existing parking logic
 
 # Future Enhancements
 - Graphical User Interface (GUI)
@@ -217,14 +324,20 @@ Linux:
 
 ---
 
- # Learning Outcomes
+## Learning Outcomes
+
 Through this project, we learned:
 
 - Modular programming in C
-- Data structure implementation
-- File handling techniques
-- Problem-solving using programming logic
-- Designing a real-world management system
+- Circular Queue implementation
+- Weighted Graph implementation
+- Dijkstra's Algorithm
+- Binary file handling
+- Real-time dashboard design
+- Authentication techniques
+- Practical software design using multiple data structures
+
+  
 
 ---
 
